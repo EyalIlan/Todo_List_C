@@ -2,7 +2,7 @@ import React,{useState} from "react";
 import "./App.css";
 import AddTodo from "./components/addTodo/addTodo";
 import {TodoIF} from './utils/interface'
-
+import Todo from "./components/Todo/Todo";
 function App() {
 
   const [TodoList,SetTodoList] = useState<TodoIF []>([])
@@ -20,8 +20,11 @@ function App() {
     <div className="App">
       <div className="container">
         <h1>Todo List</h1>
-        <hr />
+        {/* <hr /> */}
         <AddTodo AddTodo = {AddTodoHandeler}></AddTodo>
+        {TodoList.map(p =>{
+          return <Todo todo={p.todo} Id={p.Id}></Todo>
+        })}
       </div>
     </div>
   );
