@@ -8,7 +8,7 @@ interface Props  {
 const addTodo:React.FC<Props> = () => {
   return (
     <div className='addTodo'>
-        <input type="text" />d
+        <input type="text" />
         <button>Add</button>
     </div>
   )
