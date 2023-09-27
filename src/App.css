@@ -1,38 +1,49 @@
-.App {
-  text-align: center;
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  font-family: 'Martian Mono',sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1,h2,h3{
+  padding: 20px 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+h1{
+  font-size: 50px;
+}
+
+.App{
+  height: 100vh;
+  position: relative;
+  background-color: rgb(0, 0, 0);
   color: white;
+  z-index: 2;
+  display: flex;
+  justify-content: center
 }
 
-.App-link {
-  color: #61dafb;
+.App::before{
+  content: '';
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url('https://wallpapers.com/images/hd/pokemon-squirtle-charmader-and-bulbasaur-bwdklat8c008wqxg.jpg');
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container{
+  /* margin: auto; */
+  max-width: 700px;
+  flex: 1;
+  text-align: center;
 }
