@@ -4,19 +4,30 @@ import "./Todo.css";
 interface Props {
   todo: string;
   Id: number;
-  RemoveTodo:Function
+  RemoveTodo: Function;
+  EditTodo:Function
 }
 
-const Todo: React.FC<Props> = ({ todo, Id,RemoveTodo }) => {
-  
+const Todo: React.FC<Props> = ({ todo, Id, RemoveTodo,EditTodo }) => {
   // STATE
   const [compelete, SetComplete] = useState(false);
   const [editMode, SetEditMode] = useState(false);
   const [editTodo, SetEditTodo] = useState("");
 
   //FUNCTIONS
-  const RemoveTodoHandler = () =>{
-    RemoveTodo(Id)
+  const RemoveTodoHandler = () => {
+    RemoveTodo(Id);
+  };
+
+  const CancelEditMode = () => {
+    SetEditMode(false);
+    SetEditTodo("");
+  };
+
+  const EditTodoHandler = () =>{
+    EditTodo(Id,editTodo)
+    SetEditMode(false)
+    SetEditTodo('')
   }
 
   let TodoScreen;
@@ -26,16 +37,13 @@ const Todo: React.FC<Props> = ({ todo, Id,RemoveTodo }) => {
       <div className="Todo">
         <input
           type="text"
-          onClick={() => {
-            SetComplete(!compelete);
-          }}
           onChange={(e) => {
             SetEditTodo(e.target.value);
           }}
         />
         <div>
-          <button className="btn">Save</button>
-          <button className="btn">Cancel</button>
+          <button className="btn" onClick={EditTodoHandler}>Save</button>
+          <button className="btn" onClick={CancelEditMode}>Cancel</button>
         </div>
       </div>
     );
@@ -56,9 +64,18 @@ const Todo: React.FC<Props> = ({ todo, Id,RemoveTodo }) => {
           <p>{todo}</p>
         )}
         <div>
-          <button className="btn">Edit</button>
-          <button className="btn" onClick={RemoveTodoHandler}>Delete</button>
-        </div> 
+          <button
+            className="btn"
+            onClick={() => {
+              SetEditMode(true);
+            }}
+          >
+            Edit
+          </button>
+          <button className="btn" onClick={RemoveTodoHandler}>
+            Delete
+          </button>
+        </div>
       </div>
     );
   }

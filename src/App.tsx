@@ -18,10 +18,21 @@ function App() {
   }
 
   const RemoveTodoHandler = (Id:number) =>{
-
     let todos = [...TodoList]
     todos = todos.filter(p =>{
       return p.Id !==Id
+    })
+    SetTodoList(todos)
+  }
+
+  const EditTodoHandler = (Id:number,todo:string) =>{
+    
+    let todos = [...TodoList]
+    todos = todos.map( p =>{
+       if(p.Id === Id){
+        p.todo = todo
+       }
+       return p
     })
     SetTodoList(todos)
   }
@@ -33,7 +44,7 @@ function App() {
         {/* <hr /> */}
         <AddTodo AddTodo = {AddTodoHandeler}></AddTodo>
         {TodoList.map(p =>{
-          return <Todo todo={p.todo} Id={p.Id} RemoveTodo = {RemoveTodoHandler}></Todo>
+          return <Todo todo={p.todo} Id={p.Id} RemoveTodo = {RemoveTodoHandler} EditTodo = {EditTodoHandler}></Todo>
         })}
       </div>
     </div>
