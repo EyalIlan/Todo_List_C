@@ -5,15 +5,25 @@ import {TodoIF} from './utils/interface'
 import Todo from "./components/Todo/Todo";
 function App() {
 
+  // STATE
   const [TodoList,SetTodoList] = useState<TodoIF []>([])
   const [Id,SetId] = useState(0)
 
+  // FUNCTIONS
   const AddTodoHandeler = (todo:string) =>{
-
     let todos = [...TodoList]
     todos.push({Id,complete:false,todo})
     SetTodoList(todos)
     SetId(Id + 1)
+  }
+
+  const RemoveTodoHandler = (Id:number) =>{
+
+    let todos = [...TodoList]
+    todos = todos.filter(p =>{
+      return p.Id !==Id
+    })
+    SetTodoList(todos)
   }
 
   return (
@@ -23,7 +33,7 @@ function App() {
         {/* <hr /> */}
         <AddTodo AddTodo = {AddTodoHandeler}></AddTodo>
         {TodoList.map(p =>{
-          return <Todo todo={p.todo} Id={p.Id}></Todo>
+          return <Todo todo={p.todo} Id={p.Id} RemoveTodo = {RemoveTodoHandler}></Todo>
         })}
       </div>
     </div>
