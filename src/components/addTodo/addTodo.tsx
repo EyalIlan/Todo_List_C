@@ -10,8 +10,12 @@ const AddTodo:React.FC<Props> = ({AddTodo}) => {
     const [todo,SetTodo] = useState('')
     
     const AddTodoHandler = () =>{
-        AddTodo(todo)
-        SetTodo('')
+
+        if(todo.length < 40){
+            AddTodo(todo)
+            SetTodo('')
+        }
+
     }
 
 
