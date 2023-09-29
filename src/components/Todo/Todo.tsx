@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "./Todo.css";
 
 interface Props {
@@ -13,6 +13,12 @@ const Todo: React.FC<Props> = ({ todo, Id, RemoveTodo,EditTodo }) => {
   const [compelete, SetComplete] = useState(false);
   const [editMode, SetEditMode] = useState(false);
   const [editTodo, SetEditTodo] = useState("");
+  const [BG,SetBG] = useState(0)
+
+  //EFFECT
+  useEffect(() =>{
+    SetBG (Math.floor(Math.random()*3) + 1)
+  },[])
 
   //FUNCTIONS
   const RemoveTodoHandler = () => {
@@ -30,11 +36,12 @@ const Todo: React.FC<Props> = ({ todo, Id, RemoveTodo,EditTodo }) => {
     SetEditTodo('')
   }
 
+
   let TodoScreen;
 
   if (editMode) {
     TodoScreen = (
-      <div className="Todo">
+      <div className={`Todo BG-blue${BG}`}>
         <input
           type="text"
           onChange={(e) => {
@@ -49,7 +56,7 @@ const Todo: React.FC<Props> = ({ todo, Id, RemoveTodo,EditTodo }) => {
     );
   } else {
     TodoScreen = (
-      <div className="Todo">
+      <div className={`Todo BG-blue${BG}`}>
         <input
           type="checkbox"
           onClick={() => {

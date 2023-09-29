@@ -13,6 +13,9 @@
     color: white;
     border: 4px solid white;
     padding-left: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 19px;
+    font-weight: 600;
 }
 
 .addTodo button{

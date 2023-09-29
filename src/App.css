@@ -6,7 +6,8 @@
 }
 
 body{
-  font-family: 'Martian Mono',sans-serif;
+  font-family: 'Courier New', Courier, monospace;
+
 }
 
 h1,h2,h3{
@@ -51,7 +52,7 @@ h1{
 .btn{
   padding: 10px 20px;
   border: none;
-  margin-left: 5px;
+  margin-left: 10px;
   font-weight: 700;
   background-color: rgb(50, 50, 233);
   color: white;

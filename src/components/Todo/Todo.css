@@ -5,7 +5,20 @@
     align-items: center;
     margin: 20px 0;
     border: 3px solid white;
-    padding: 10px 30px;
-    background-color: rgb(9, 124, 248);
+    padding: 10px 20px 10px 30px;
+    /* background-color: rgb(9, 124, 248); */
    overflow: hidden;
+   font-family: 'Courier New', Courier, monospace;
+   font-size: 19px;
+   font-weight: 600;
+}
+
+.BG-blue1{
+    background-image: linear-gradient(#08C8F6,#4D5DFB);
+}
+.BG-blue2{
+    background-image: linear-gradient(#009FFD,#2A2A72);
+}
+.BG-blue3{
+    background-image: linear-gradient(#191714,#2234AE);
 }
