@@ -61,3 +61,7 @@ h1{
   cursor: pointer;
   font-family: sans-serif;
 }
+
+.btn:hover{
+  background-color: rgb(34, 34, 167);
+}

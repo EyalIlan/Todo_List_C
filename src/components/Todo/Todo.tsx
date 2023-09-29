@@ -49,8 +49,8 @@ const Todo: React.FC<Props> = ({ todo, Id, RemoveTodo,EditTodo }) => {
           }}
         />
         <div>
-          <button className="btn" onClick={EditTodoHandler}>Save</button>
-          <button className="btn" onClick={CancelEditMode}>Cancel</button>
+          <button className="btn" onClick={EditTodoHandler}><i className="fa-solid fa-floppy-disk"></i></button>
+          <button className="btn" onClick={CancelEditMode}><i className="fa-solid fa-xmark"></i></button>
         </div>
       </div>
     );
@@ -71,17 +71,8 @@ const Todo: React.FC<Props> = ({ todo, Id, RemoveTodo,EditTodo }) => {
           <p>{todo}</p>
         )}
         <div>
-          <button
-            className="btn"
-            onClick={() => {
-              SetEditMode(true);
-            }}
-          >
-            Edit
-          </button>
-          <button className="btn" onClick={RemoveTodoHandler}>
-            Delete
-          </button>
+          <button className="btn" onClick={() => {SetEditMode(true);}}> <i className="fa-solid fa-pen-to-square"></i></button>
+          <button className="btn" onClick={RemoveTodoHandler}> <i className="fa-solid fa-trash"></i></button>
         </div>
       </div>
     );
