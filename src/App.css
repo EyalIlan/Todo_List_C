@@ -10,22 +10,26 @@ body{
 
 }
 
-h1,h2,h3{
-  padding: 20px 0;
+hr{
+  margin: 20px 0;
+  height: 2px;
+  background-color: white;
+
 }
 
 h1{
-  font-size: 50px;
+  font-size: 70px;
 }
 
 .App{
   height: 100vh;
   position: relative;
   background-color: rgb(0, 0, 0);
-  color: white;
+  color: rgb(1, 130, 251);
   z-index: 2;
   display: flex;
-  justify-content: center
+  justify-content: center;
+  align-items: center;
 }
 
 .App::before{
@@ -44,10 +48,17 @@ h1{
 }
 
 .container{
-  /* margin: auto; */
+  color: white;
   max-width: 700px;
   flex: 1;
-  text-align: center;
+  min-height: 800px;
+  background-color: rgb(3, 186, 252);
+  padding: 50px 70px;
+  border-radius: 30px;
+  box-shadow: -10px -10px rgb(14, 83, 234),-20px -20px rgb(6, 55, 162),-30px -30px rgb(3, 41, 123);
+  border: 4px solid black;
+  overflow: auto;
+  max-height: 800px;
 }
 
 .btn{
@@ -57,7 +68,7 @@ h1{
   font-weight: bold;
   background-color: rgb(50, 50, 233);
   color: white;
-  border: 3px solid white;
+  border: 1px solid white;
   cursor: pointer;
   font-family: sans-serif;
 }

@@ -41,7 +41,7 @@ function App() {
     <div className="App">
       <div className="container">
         <h1>Todo List</h1>
-        {/* <hr /> */}
+        <hr />
         <AddTodo AddTodo = {AddTodoHandeler}></AddTodo>
         {TodoList.map(p =>{
           return <Todo todo={p.todo} Id={p.Id} RemoveTodo = {RemoveTodoHandler} EditTodo = {EditTodoHandler}></Todo>
